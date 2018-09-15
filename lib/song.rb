@@ -66,12 +66,9 @@ class Song
     song.genre = Genre.find_or_create_by_name(parse_info[2])
     song
   end
-  
+
   def self.create_from_filename(filename)
-    song = self.new
-    parse_info = filename.chomp(".mp3").split(" - ")
-    song.artist_name = parse_info[0]
-    song.name = parse_info[1]
+    song = self.new_from_filename(filename)
     @@all << song
     song
   end
