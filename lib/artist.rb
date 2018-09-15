@@ -1,5 +1,7 @@
 class Artist
 
+  extend Findable::ClassMethods
+
   @@all = []
 
   attr_accessor :name
