@@ -1,5 +1,7 @@
 class Genre
 
+  extend Findable::ClassMethods
+
   @@all = []
 
   attr_accessor :name
