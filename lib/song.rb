@@ -1,7 +1,7 @@
 class Song
 
   @@all = []
-  
+
   attr_accessor :name
 
   def initialize(name)
@@ -24,4 +24,5 @@ class Song
     song = Song.new(name)
     @@all << song
     song
+  end
 end
