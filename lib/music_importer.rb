@@ -1,14 +1,14 @@
 class MusicImporter
   def initialize(filepath)
-    @filepath = filepath
+    @path = filepath
   end
 
   def path
-    @filepath
+    @path
   end
 
   def files
-    Dir.chdir(@filepath) do
+    Dir.chdir(@path) do
       @files = Dir.glob("*.mp3")
     end
   end
