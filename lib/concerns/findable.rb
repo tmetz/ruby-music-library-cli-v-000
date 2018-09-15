@@ -1,7 +1,7 @@
 module Concerns::Findable
 
 
-  def self.find_or_create_by_name(name)
+  def find_or_create_by_name(name)
     found_object = self.find_by_name(name)
     if found_object
       found_object
