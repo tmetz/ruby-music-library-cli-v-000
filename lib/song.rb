@@ -44,4 +44,17 @@ class Song
       genre.songs << self
     end
   end
+
+  def self.find_or_create_by_name(name)
+    found_song = self.find_by_name(name)
+    if found_song
+      found_song
+    else
+      self.create(name)
+    end
+  end
+
+  def self.find_by_name(which_song)
+    @@all.find {|song| song.name == which_song}
+  end
 end
