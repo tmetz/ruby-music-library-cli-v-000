@@ -36,4 +36,11 @@ class Artist
       @songs << song
     end
   end
+
+  def genres
+    return_genres = songs.map do |song|
+      song.genre
+    end
+    return_genres.uniq
+  end
 end
