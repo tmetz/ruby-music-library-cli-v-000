@@ -3,7 +3,7 @@ class Song
   @@all = []
 
   attr_accessor :name
-  attr_writer :artist
+  attr_reader :artist
 
   def initialize(attributes)
     attributes.each {|key, value| self.send(("#{key=}"), value)}
