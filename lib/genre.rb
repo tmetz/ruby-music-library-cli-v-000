@@ -27,4 +27,11 @@ class Genre
     @@all << genre
     genre
   end
+
+  def artists
+    return_artists = songs.map do |song|
+      song.artist
+    end
+    return_artists.uniq
+  end
 end
