@@ -1,4 +1,4 @@
-module Findable
+module Concerns::Findable
   module ClassMethods
 
     def self.find_or_create_by_name(name)
