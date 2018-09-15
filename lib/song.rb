@@ -1,4 +1,3 @@
-require pry
 class Song
 
   @@all = []
@@ -8,7 +7,6 @@ class Song
 
   def initialize(name, *artist)
     @name=name
-    Binding.pry
     self.artist=(artist[0])
   end
 
@@ -31,7 +29,7 @@ class Song
   end
 
   def artist=(artist)
+    artist.add_song(self)
     @artist = artist
-    self.artist.add_song(self)
   end
 end
