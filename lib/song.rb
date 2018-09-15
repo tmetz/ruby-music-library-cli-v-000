@@ -6,7 +6,7 @@ class Song
   attr_reader :artist
 
   def initialize(attributes)
-    attributes.each {|key, value| self.send(("#{key=}"), value)}
+    attributes.each {|key, value| self.send(("#{key}="), value)}
   end
 
   def self.all
