@@ -87,7 +87,7 @@ class MusicLibraryController
   end
 
   def play_song
-    list_songs
+    #list_songs
     puts "Which song number would you like to play?"
     selection = gets.to_i - 1
     songs_array = Song.all.sort_by {|song| song.name}
