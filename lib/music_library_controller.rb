@@ -42,7 +42,6 @@ class MusicLibraryController
       real_index = index + 1
       puts "#{real_index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
-    name_array
   end
 
   def list_artists
@@ -89,8 +88,9 @@ class MusicLibraryController
 
   def play_song
     puts "Which song number would you like to play?"
-    songs_array = list_songs
+    list_songs
     selection = gets.to_i - 1
+    songs_array = Song.all.sort_by {|song| song.name}
     if selection >= 1 && selection < songs_array.length
       puts "Playing #{songs_array[selection].name} by #{songs_array[selection].artist.name}"
     end
