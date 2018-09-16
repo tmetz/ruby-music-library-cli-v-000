@@ -30,8 +30,8 @@ class MusicLibraryController
         list_songs_by_genre
       when "play song"
         play_song
-      else
-        puts "That is not a valid option"
+      #else
+      #  puts "That is not a valid option"
       end
     end
   end
