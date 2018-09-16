@@ -62,7 +62,7 @@ class MusicLibraryController
 
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
-    gets artist_name
+    artist_name = gets.strip
     name_array = Artist.find_by_name(artist_name).sort_by {|song| song.name}
     name_array.each_with_index do |song, index|
       real_index = index + 1
