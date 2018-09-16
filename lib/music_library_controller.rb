@@ -28,7 +28,7 @@ class MusicLibraryController
         list_songs_by_artist
       when "list genre"
         list_songs_by_genre
-      when "play_song"
+      when "play song"
         play_song
       else
         puts "That is not a valid option"
@@ -83,6 +83,16 @@ class MusicLibraryController
         real_index = index + 1
         puts "#{real_index}. #{song.artist.name} - #{song.name}"
       end
+    end
+    songs_array
+  end
+
+  def play_song
+    puts "Which song number would you like to play?"
+    songs_array = list_songs
+    selection = gets.strip
+    if selection >= 1 && selection < songs_array.length
+      puts "Playing #{songs_array[selection - 1].name} by #{songs_array[selection - 1].artist.name}"
     end
   end
 end
