@@ -42,6 +42,7 @@ class MusicLibraryController
       real_index = index + 1
       puts "#{real_index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
+    name_array
   end
 
   def list_artists
@@ -84,7 +85,6 @@ class MusicLibraryController
         puts "#{real_index}. #{song.artist.name} - #{song.name}"
       end
     end
-    songs_array
   end
 
   def play_song
