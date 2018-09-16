@@ -90,9 +90,9 @@ class MusicLibraryController
   def play_song
     puts "Which song number would you like to play?"
     songs_array = list_songs
-    selection = gets.to_i
+    selection = gets.to_i - 1
     if selection >= 1 && selection < songs_array.length
-      puts "Playing #{songs_array[selection - 1].name} by #{songs_array[selection - 1].artist.name}"
+      puts "Playing #{songs_array[selection].name} by #{songs_array[selection].artist.name}"
     end
   end
 end
