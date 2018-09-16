@@ -51,4 +51,12 @@ class MusicLibraryController
       puts "#{real_index}. #{artist.name}"
     end
   end
+
+  def list_genres
+    name_array = Genre.all.sort_by {|genre| genre.name}
+    name_array.each_with_index do |genre, index|
+      real_index = index + 1
+      puts "#{real_index}. #{genre.name}"
+    end
+  end
 end
