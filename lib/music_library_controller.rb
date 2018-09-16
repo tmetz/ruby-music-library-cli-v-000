@@ -25,7 +25,7 @@ class MusicLibraryController
       when "list genres"
         list_genres
       when "list artist"
-        list_artist
+        list_songs_by_artist
       when "list genre"
         list_genre
       when "play_song"
@@ -57,6 +57,16 @@ class MusicLibraryController
     name_array.each_with_index do |genre, index|
       real_index = index + 1
       puts "#{real_index}. #{genre.name}"
+    end
+  end
+
+  def list_songs_by_artist
+    puts "Please enter the name of an artist:"
+    gets artist_name
+    name_array = Artist.find_by_name(artist_name).sort_by {|song| song.name}
+    name_array.each_with_index do |song, index|
+      real_index = index + 1
+      puts "#{real_index}. #{song.name} - #{song.genre}"
     end
   end
 end
